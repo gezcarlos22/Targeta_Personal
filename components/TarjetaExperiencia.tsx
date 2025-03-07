@@ -1,20 +1,60 @@
-import { Image, View, Text } from "react-native";
+import React from "react";
+import { Image, View, Text, StyleSheet } from "react-native";
 
-<View style={{
-    flex:1,
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: 10,
-    borderBottomColor: "#ddd",
-    borderBottomWidth: 1,
-    padding: 10
-}}>
-    <Image style={{width: 80, height: 80}} source={{uri:"https://media.licdn.com/dms/image/v2/C560BAQFoMbh8Jawjhg/company-logo_100_100/company-logo_100_100/0/1631338342207?e=1749081600&v=beta&t=6fgq4Zi_lslt6EwSEinoOUmyLfOT2qaNu9C_ny94y9c"}}/>
-    <View style={{flex:1, flexDirection:"column"}}>
-    <Text style={{fontWeight:"bold", fontSize: 14}}>Posición</Text>
-    <Text style={{fontSize:12, lineHeight: 18}}>Empresa</Text>
-    <Text style={{fontSize: 12, color: "#808080", lineHeight: 18}}>Fecha</Text>
-    <Text style={{fontSize: 12, color: "#808080", lineHeight: 18, marginBottom: 10}}>Locación</Text>
-    <Text style={{fontSize: 12,fontWeight: "bold",lineHeight: 18}}>Tecnologías</Text>
-    </View>
-</View>
+
+const SIZE = 80;
+
+interface TarjetaExperiencia {
+    logo: string;
+    posicion: string;
+    empresa: string;
+    fecha: string;
+    locacion: string;
+    tecnologias: string;
+};
+
+export const TarjetaExperiencia = ({
+    logo,
+    posicion,
+    empresa,
+    fecha,
+    locacion,
+    tecnologias,
+  }: TarjetaExperiencia) =>{
+    return (
+        <View style={styles.contenedor}>
+          <Image
+            style={styles.logo}
+            source={{
+              uri: logo,
+            }}
+          />
+          <View style={styles.contenedorDeContenido}>
+            <Text style={styles.posicion}>{posicion}</Text>
+            <Text style={styles.empresa}>{empresa}</Text>
+            <Text style={styles.fecha}>{fecha}</Text>
+            <Text style={styles.locacion}>{locacion}</Text>
+            <Text style={styles.tecnologias}>{tecnologias}</Text>
+          </View>
+        </View>
+      );
+    };
+
+const styles = StyleSheet.create({
+    contenedor:{
+        flex:1,
+        flexDirection: "row",
+        alignItems: "flex-start",
+        gap: 10,
+        borderBottomColor: "#ddd",
+        borderBottomWidth: 1,
+        padding: 10
+    },
+    posicion:{fontWeight:"bold", fontSize: 14},
+    empresa: {fontSize:12, lineHeight: 18},
+    fecha: {fontSize: 12, color: "#808080", lineHeight: 18},
+    locacion: {fontSize: 12, color: "#808080", lineHeight: 18, marginBottom: 10},
+    tecnologias: {fontSize: 12,fontWeight: "bold",lineHeight: 18},
+    contenedorDeContenido:{flex:1, flexDirection:"column"},
+    logo:{width: SIZE, height: SIZE}
+})

@@ -1,5 +1,22 @@
 import { Text, View, SafeAreaView, StyleSheet, ScrollView, Image, Button, Linking} from "react-native";
 import { FontAwesome6 } from "@expo/vector-icons";
+import { TarjetaExperiencia } from "@/components/TarjetaExperiencia";
+import { experiencias } from "@/data/experiencia";
+
+const renderExperiencias = () =>
+  experiencias.map((experiencia, index) => {
+    return (
+      <TarjetaExperiencia
+        key={`${index}-${experiencia.empresa}-${experiencia.posicion}`}
+        logo={experiencia.logo}
+        posicion={experiencia.posicion}
+        empresa={experiencia.empresa}
+        fecha={experiencia.fecha}
+        locacion={experiencia.locacion}
+        tecnologias={experiencia.tecnologias}
+      />
+    );
+  });
 
 export default function Index() {
   return (
@@ -22,26 +39,8 @@ export default function Index() {
           <Button title="Contacto" onPress={onContactoHandler}/>
           <Text style={styles.bio}>Soy un Desarrollador Web con experiencia en el desarrollo de aplicaciones y sitios responsivos. Además, cuento con formación en Ciencia de Datos, UX/UI y Testing QA, lo que me permite aportar una visión integral en cada proyecto.</Text>
           <Text style={styles.experiencia}>Experiencia</Text>
-          
-          <View style={{
-              flex:1,
-              flexDirection: "row",
-              alignItems: "flex-start",
-              gap: 10,
-              borderBottomColor: "#ddd",
-              borderBottomWidth: 1,
-              padding: 10
-          }}>
-              <Image style={{width: 80, height: 80}} source={{uri:"https://media.licdn.com/dms/image/v2/C560BAQFoMbh8Jawjhg/company-logo_100_100/company-logo_100_100/0/1631338342207?e=1749081600&v=beta&t=6fgq4Zi_lslt6EwSEinoOUmyLfOT2qaNu9C_ny94y9c"}}/>
-              <View style={{flex:1, flexDirection:"column"}}>
-              <Text style={{fontWeight:"bold", fontSize: 14}}>Posición</Text>
-              <Text style={{fontSize:12, lineHeight: 18}}>Empresa</Text>
-              <Text style={{fontSize: 12, color: "#808080", lineHeight: 18}}>Fecha</Text>
-              <Text style={{fontSize: 12, color: "#808080", lineHeight: 18, marginBottom: 10}}>Locación</Text>
-              <Text style={{fontSize: 12,fontWeight: "bold",lineHeight: 18}}>Tecnologías</Text>
-              </View>
-          </View>
 
+          {renderExperiencias()}
 
         </View>
       </ScrollView>
