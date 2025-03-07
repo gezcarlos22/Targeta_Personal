@@ -1,7 +1,7 @@
 import { Text, View, SafeAreaView, StyleSheet, ScrollView, Image, Button, Linking} from "react-native";
-import { FontAwesome6 } from "@expo/vector-icons";
 import { TarjetaExperiencia } from "@/components/TarjetaExperiencia";
 import { experiencias } from "@/data/experiencia";
+import { Iconos } from "@/components/Iconos";
 
 const renderExperiencias = () =>
   experiencias.map((experiencia, index) => {
@@ -16,8 +16,24 @@ const renderExperiencias = () =>
         tecnologias={experiencia.tecnologias}
       />
     );
-  });
+});
 
+const onGithubPressHandler = () => {
+  Linking.openURL("https://github.com/gezcarlos22");
+};
+const onTwitterPressHandler = () => {
+  Linking.openURL("URL TWITTER");
+};
+const onAtPressHandler = () => {
+  Linking.openURL("mailto:gez.carlos.98@gmail.com");
+};
+const onInstagramPressHandler = () => {
+  Linking.openURL("URL INSTAGRAM");
+};
+const onFacebookPressHandler = () => {
+  Linking.openURL("URL FACEBOOK");
+};
+  
 export default function Index() {
   return (
     <SafeAreaView
@@ -28,13 +44,13 @@ export default function Index() {
           <Image source={{uri:"https://itspectrumsolutions.com/wp-content/uploads/2024/03/reactnative.jpg"}} style={styles.banner}/>
           <Image source={require("@/assets/images/yo.jpg")} style={styles.imagenPersonal}/>
           <Text style={styles.title}>Gez Carlos Enrique</Text>
-          <View style={styles.contenedorIconos}>
-            <FontAwesome6 name="github" size={24} color="darkblue" />
-            <FontAwesome6 name="x-twitter" size={24} color="darkblue" />
-            <FontAwesome6 name="at" size={24} color="darkblue" />
-            <FontAwesome6 name="instagram" size={24} color="darkblue" />
-            <FontAwesome6 name="facebook" size={24} color="darkblue" />
-          </View>
+          <Iconos 
+            onGithubPress={onGithubPressHandler}
+            onTwitterPress={onTwitterPressHandler}
+            onAtPress={onAtPressHandler}
+            onInstagramPress={onInstagramPressHandler}
+            onFacebookPress={onFacebookPressHandler}
+          />
 
           <Button title="Contacto" onPress={onContactoHandler}/>
           <Text style={styles.bio}>Soy un Desarrollador Web con experiencia en el desarrollo de aplicaciones y sitios responsivos. Además, cuento con formación en Ciencia de Datos, UX/UI y Testing QA, lo que me permite aportar una visión integral en cada proyecto.</Text>
