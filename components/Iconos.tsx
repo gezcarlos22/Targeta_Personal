@@ -4,30 +4,38 @@ import { Icono } from "@/components/Icono";
 
 interface IconosProps {
   onGithubPress: () => void;
-  onTwitterPress: () => void;
+  onLinkedinPress: () => void;
   onAtPress: () => void;
   onInstagramPress: () => void;
-  onFacebookPress: () => void;
+  onBehancePress: () => void;
 }
 
 export const Iconos = ({
   onGithubPress,
-  onTwitterPress,
+  onLinkedinPress,
   onAtPress,
   onInstagramPress,
-  onFacebookPress,
+  onBehancePress,
 }: IconosProps) => {
   return (
     <View style={styles.contenedorIconos}>
       <Icono icon="github" onPress={onGithubPress} />
-      <Icono icon="x-twitter" onPress={onTwitterPress} />
+      <Icono icon="linkedin" onPress={onLinkedinPress} />
       <Icono icon="at" onPress={onAtPress} />
       <Icono icon="instagram" onPress={onInstagramPress} />
-      <Icono icon="facebook" onPress={onFacebookPress} />
+      <Icono icon="behance" onPress={onBehancePress} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  contenedorIconos: { flexDirection: "row", marginVertical: 10, gap: 15 },
+  contenedorIconos: { 
+    flexDirection: "row", 
+    marginVertical: 10, 
+    gap: 15,
+    backgroundColor: "#1E2023",
+    paddingVertical: 15,
+    paddingHorizontal:20,
+    borderRadius: 30
+  },
 });

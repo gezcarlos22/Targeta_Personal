@@ -46,15 +46,15 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "flex-start",
         gap: 10,
-        borderBottomColor: "#ddd",
+        borderBottomColor: "white",
         borderBottomWidth: 1,
         padding: 10
     },
-    posicion:{fontWeight:"bold", fontSize: 14},
-    empresa: {fontSize:12, lineHeight: 18},
+    posicion:{fontWeight:"bold", fontSize: 14, color: "white"},
+    empresa: {fontSize:12, lineHeight: 18, color: "white"},
     fecha: {fontSize: 12, color: "#808080", lineHeight: 18},
     locacion: {fontSize: 12, color: "#808080", lineHeight: 18, marginBottom: 10},
-    tecnologias: {fontSize: 12,fontWeight: "bold",lineHeight: 18},
+    tecnologias: {fontSize: 12,fontWeight: "bold",lineHeight: 18, color: "#808080"},
     contenedorDeContenido:{flex:1, flexDirection:"column"},
-    logo:{width: SIZE, height: SIZE}
+    logo:{width: SIZE, height: SIZE, borderRadius:15}
 })
