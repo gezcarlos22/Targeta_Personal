@@ -31,7 +31,8 @@ export const Iconos = ({
 const styles = StyleSheet.create({
   contenedorIconos: { 
     flexDirection: "row", 
-    marginVertical: 10, 
+    marginTop: 20, 
+    marginBottom: 20,
     gap: 15,
     backgroundColor: "#1E2023",
     paddingVertical: 15,

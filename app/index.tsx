@@ -1,22 +1,8 @@
 import { Text, View, SafeAreaView, StyleSheet, ScrollView, Image, Pressable, Linking} from "react-native";
-import { TarjetaExperiencia } from "@/components/TarjetaExperiencia";
-import { experiencias } from "@/data/experiencia";
 import { Iconos } from "@/components/Iconos";
+import { Link } from "expo-router";
+import { MaterialCommunityIcons, Octicons, MaterialIcons, FontAwesome6} from "@expo/vector-icons";
 
-const renderExperiencias = () =>
-  experiencias.map((experiencia, index) => {
-    return (
-      <TarjetaExperiencia
-        key={`${index}-${experiencia.empresa}-${experiencia.posicion}`}
-        logo={experiencia.logo}
-        posicion={experiencia.posicion}
-        empresa={experiencia.empresa}
-        fecha={experiencia.fecha}
-        locacion={experiencia.locacion}
-        tecnologias={experiencia.tecnologias}
-      />
-    );
-});
 
 const onGithubPressHandler = () => {
   Linking.openURL("https://github.com/gezcarlos22");
@@ -62,10 +48,57 @@ export default function Index() {
               <Text style={styles.customButtonText}>Contacto</Text>
           </Pressable>
           <Text style={styles.bio}>Soy un Desarrollador Web con experiencia en el desarrollo de aplicaciones y sitios responsivos. Además, cuento con formación en Ciencia de Datos, UX/UI y Testing QA, lo que me permite aportar una visión integral en cada proyecto.</Text>
-          <Text style={styles.experiencia}>Experiencia</Text>
 
-          {renderExperiencias()}
+          <View style={styles.linkContainer}>
+            <Link asChild href="/experiencia" style={styles.customButton}>
+              <Pressable
+                style={({ pressed }) => [
+                  styles.linkPressable,
+                  pressed && styles.buttonPressed,
+                ]}
+              >
+              <MaterialCommunityIcons name="card-account-details-outline" size={40} color="white" />
+                <Text style={styles.experiencia}>Experiencia</Text>
+              </Pressable>
+            </Link>
 
+            <Link asChild href="/estudios" style={styles.customButton}>
+              <Pressable
+                style={({ pressed }) => [
+                  styles.linkPressable,
+                  pressed && styles.buttonPressed,
+                ]}
+              >
+                <MaterialCommunityIcons name="school-outline" size={40} color="white" />
+                <Text style={styles.experiencia}>Estudios</Text>
+              </Pressable>
+            </Link>
+          </View>
+          <View style={styles.linkContainer}>
+            <Link asChild href="/experiencia" style={styles.customButton}>
+              <Pressable
+                style={({ pressed }) => [
+                  styles.linkPressable,
+                  pressed && styles.buttonPressed,
+                ]}
+              >
+               <MaterialIcons name="devices" size={40} color="white"/>
+                <Text style={styles.experiencia}>Proyectos</Text>
+              </Pressable>
+            </Link>
+
+            <Link asChild href="/experiencia" style={styles.customButton}>
+              <Pressable
+                style={({ pressed }) => [
+                  styles.linkPressable,
+                  pressed && styles.buttonPressed,
+                ]}
+              >
+                <MaterialCommunityIcons name="head-cog-outline" size={40} color="white" />
+                <Text style={styles.experiencia}>Skills</Text>
+              </Pressable>
+            </Link>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -99,42 +132,49 @@ const styles = StyleSheet.create({
     borderColor: "#1E2023",
     marginTop: -100,
   },
-  contenedorIconos:{
-    flexDirection:"row",
-    marginVertical: 10,
-    gap: 10
-  },
   bio: {
-    fontSize: 12,
+    fontSize: 15,
     lineHeight: 18,
     color: "white",
     marginHorizontal: 20,
-    marginVertical:10
+    marginVertical:20
   },
   experiencia:{
     fontWeight: "bold",
     fontSize: 18,
-    marginTop: 10,
-    color: "white"
+    marginTop: 5,
+    color: "white",
   },
   customButton: {
+    flexDirection:"column",
+    alignItems:"center",
     backgroundColor: "#1E2023",
     borderColor: "white",
     borderWidth: 1,
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 10,
-    margin: 10,
+    width: 120,
   },
   customButtonText: {
       color: "white",
       fontSize: 18,
-      fontWeight: "bold"
+      fontWeight: "bold",
   },
   buttonPressed:{
     backgroundColor: "#1B1C1E",
     borderColor: "darkblue", 
-  }
+  },
+  linkContainer:{
+    flexDirection:"row",
+    alignItems: 'center',
+    marginBottom: 20,
+    gap: 20
+  },
+  linkPressable: {
+    flexDirection: "column",
+    alignItems: 'center',
+  },
 });
 
 const onContactoHandler = () => {
