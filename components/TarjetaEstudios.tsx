@@ -1,5 +1,6 @@
 import React from "react";
-import { Image, View, Text, StyleSheet, Pressable} from "react-native";
+import { Image, View, Text, StyleSheet, Linking} from "react-native";
+import { Redireccion } from "./Redireccion";
 
 const SIZE = 80;
 
@@ -10,6 +11,10 @@ interface TarjetaEstudios {
     fecha: string;
     locacion: string;
     skills: string;
+    certificado: string;
+};
+const onEstudiosPressHander = (certificado:string) => {
+  Linking.openURL(certificado);
 };
 
 export const TarjetaEstudios = ({
@@ -19,6 +24,7 @@ export const TarjetaEstudios = ({
     fecha,
     locacion,
     skills,
+    certificado
   }: TarjetaEstudios) =>{
     return (
         <View style={styles.contenedor}>
@@ -35,6 +41,7 @@ export const TarjetaEstudios = ({
             <Text style={styles.locacion}>{locacion}</Text>
             <Text style={styles.tecnologias}>{skills}</Text>
           </View>
+          <Redireccion onPress={()=>onEstudiosPressHander(certificado)}/>
         </View>
       );
     };
@@ -53,7 +60,7 @@ const styles = StyleSheet.create({
     empresa: {fontSize:12, lineHeight: 18, color: "white"},
     fecha: {fontSize: 12, color: "#808080", lineHeight: 18},
     locacion: {fontSize: 12, color: "#808080", lineHeight: 18, marginBottom: 10},
-    tecnologias: {fontSize: 10, fontWeight:"bold", lineHeight: 18, color: "#808080"},
+    tecnologias: {fontSize: 12, fontWeight:"bold", lineHeight: 18, color: "#808080"},
     contenedorDeContenido:{flex: 1, flexDirection:"column"},
     logo:{width: SIZE, height: SIZE, borderRadius:15},
 });

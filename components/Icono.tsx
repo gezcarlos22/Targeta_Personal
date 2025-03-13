@@ -3,7 +3,7 @@ import { Pressable } from "react-native";
 import { FontAwesome6 } from "@expo/vector-icons";
 
 interface IconoProps {
-  icon: "github" | "linkedin" | "at" | "instagram" | "behance";
+  icon: "github" | "linkedin" | "at" | "instagram" | "behance" | "arrow-up-right-from-square";
   size?: number;
   color?: string;
   activeColor?: string;
@@ -12,7 +12,7 @@ interface IconoProps {
 
 export const Icono = ({
   icon,
-  size = 24,
+  size,
   color = "white",
   activeColor = "blue",
   onPress,

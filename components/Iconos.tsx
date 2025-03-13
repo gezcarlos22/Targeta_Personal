@@ -19,11 +19,11 @@ export const Iconos = ({
 }: IconosProps) => {
   return (
     <View style={styles.contenedorIconos}>
-      <Icono icon="github" onPress={onGithubPress} />
-      <Icono icon="linkedin" onPress={onLinkedinPress} />
-      <Icono icon="at" onPress={onAtPress} />
-      <Icono icon="instagram" onPress={onInstagramPress} />
-      <Icono icon="behance" onPress={onBehancePress} />
+      <Icono icon="github" onPress={onGithubPress} size={24} />
+      <Icono icon="linkedin" onPress={onLinkedinPress} size={24}/>
+      <Icono icon="at" onPress={onAtPress} size={24}/>
+      <Icono icon="instagram" onPress={onInstagramPress} size={24}/>
+      <Icono icon="behance" onPress={onBehancePress} size={24}/>
     </View>
   );
 };

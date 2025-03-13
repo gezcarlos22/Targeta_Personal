@@ -45,16 +45,16 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection: "row",
         alignItems: "flex-start",
-        gap: 10,
+        gap: 20,
         borderBottomColor: "white",
         borderBottomWidth: 1,
-        padding: 10
+        padding: 20,
     },
     posicion:{fontWeight:"bold", fontSize: 14, color: "white"},
     empresa: {fontSize:12, lineHeight: 18, color: "white"},
     fecha: {fontSize: 12, color: "#808080", lineHeight: 18},
     locacion: {fontSize: 12, color: "#808080", lineHeight: 18, marginBottom: 10},
-    tecnologias: {fontSize: 12,fontWeight: "bold",lineHeight: 18, color: "#808080", marginBottom: 10},
-    contenedorDeContenido:{flex:1, flexDirection:"column"},
-    logo:{width: SIZE, height: SIZE, borderRadius:15}
+    tecnologias: {fontSize: 12, fontWeight:"bold", lineHeight: 18, color: "#808080"},
+    contenedorDeContenido:{flex: 1, flexDirection:"column"},
+    logo:{width: SIZE, height: SIZE, borderRadius:15},
 });

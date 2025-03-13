@@ -1,26 +1,24 @@
 import { SafeAreaView, ScrollView, Text, Pressable, StyleSheet, View} from "react-native";
 import { Link } from "expo-router";
 import { FontAwesome6 } from "@expo/vector-icons";
-import { estudios } from "@/data/estudios"
-import { TarjetaEstudios } from "@/components/TarjetaEstudios";
+import { proyectos } from "@/data/proyectos";
+import { TarjetaProyecto } from "@/components/TarjetaProyecto";
 
-const renderEstudios = () =>
-  estudios.map((estudios, index) => {
+const renderProyectos = () =>
+  proyectos.map((proyectos, index) => {
     return (
-      <TarjetaEstudios
-        key={`${index}-${estudios.colegio}-${estudios.titulo}`}
-        logo={estudios.logo}
-        titulo={estudios.titulo}
-        colegio={estudios.colegio}
-        fecha={estudios.fecha}
-        locacion={estudios.locacion}
-        skills={estudios.skills}
-        certificado={estudios.certificado}
+      <TarjetaProyecto
+        key={`${index}-${proyectos.descripcion}-${proyectos.nombreProy}`}
+        logo={proyectos.logo}
+        nombreProy={proyectos.nombreProy}
+        descripcion={proyectos.descripcion}
+        skillsUsadas={proyectos.skillsUsadas}
+        redireccion={proyectos.redireccion}
       />
     );
 });
 
-export default function Estudios() {
+export default function Proyectos() {
     return (
         <SafeAreaView style={styles.contenido}>
             <ScrollView >
@@ -32,10 +30,10 @@ export default function Estudios() {
                     </Link>
                 </View>
                 <View style={styles.contenidoTitle}>
-                    <Text style={styles.title}>Estudios</Text>
+                    <Text style={styles.title}>Proyectos</Text>
                 </View>
                 
-                {renderEstudios()}
+                {renderProyectos()}
             </ScrollView>
         </SafeAreaView>
     )

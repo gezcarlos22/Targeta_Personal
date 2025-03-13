@@ -75,7 +75,7 @@ export default function Index() {
             </Link>
           </View>
           <View style={styles.linkContainer}>
-            <Link asChild href="/experiencia" style={styles.customButton}>
+            <Link asChild href="/proyectos" style={styles.customButton}>
               <Pressable
                 style={({ pressed }) => [
                   styles.linkPressable,
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 10,
-    width: 120,
+    width: 130,
   },
   customButtonText: {
       color: "white",
