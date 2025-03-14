@@ -1,7 +1,6 @@
 import React from "react";
 import { Image, View, Text, StyleSheet } from "react-native";
 
-
 const SIZE = 80;
 
 interface TarjetaExperiencia {

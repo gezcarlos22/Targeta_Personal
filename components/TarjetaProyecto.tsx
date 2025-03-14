@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, View, Text, StyleSheet, Linking} from "react-native";
-import { Redireccion } from "./Redireccion";
+import { BotonIcon } from "./BotonIcon";
 
 
 interface TarjetaProyecto {
@@ -36,7 +36,7 @@ export const TarjetaProyecto = ({
                 <Text style={styles.tecnologias}>{skillsUsadas}</Text>
             </View>
             <View>
-                <Redireccion onPress={() => onProyectoPressHander(redireccion)} />
+                <BotonIcon onPress={()=>onProyectoPressHander(redireccion)} icono="arrow-up-right-from-square" tamaño={18}/>
             </View>
           </View>
           

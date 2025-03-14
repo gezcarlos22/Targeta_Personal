@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, View, Text, StyleSheet, Linking} from "react-native";
-import { Redireccion } from "./Redireccion";
+import { BotonIcon } from "./BotonIcon";
 
 const SIZE = 80;
 
@@ -41,7 +41,7 @@ export const TarjetaEstudios = ({
             <Text style={styles.locacion}>{locacion}</Text>
             <Text style={styles.tecnologias}>{skills}</Text>
           </View>
-          <Redireccion onPress={()=>onEstudiosPressHander(certificado)}/>
+          <BotonIcon onPress={()=>onEstudiosPressHander(certificado)} icono="arrow-up-right-from-square" tamaño={18}/>
         </View>
       );
     };

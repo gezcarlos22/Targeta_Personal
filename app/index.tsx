@@ -1,7 +1,7 @@
 import { Text, View, SafeAreaView, StyleSheet, ScrollView, Image, Pressable, Linking} from "react-native";
 import { Iconos } from "@/components/Iconos";
-import { Link } from "expo-router";
-import { MaterialCommunityIcons, Octicons, MaterialIcons, FontAwesome6} from "@expo/vector-icons";
+import { BotonLink } from "@/components/BotonLink";
+import { BotonIcon } from "@/components/BotonIcon";
 
 
 const onGithubPressHandler = () => {
@@ -19,7 +19,10 @@ const onInstagramPressHandler = () => {
 const onBehancePressHandler = () => {
   Linking.openURL("https://www.behance.net/gezcarlos");
 };
-  
+const onContactoHandler = () => {
+  Linking.openURL("https://drive.google.com/file/d/1PmAjMA4gQYOEe-1Vstn8a-2Dnl2rbVpA/view?usp=sharing");
+};
+
 export default function Index() {
   return (
     <SafeAreaView
@@ -38,66 +41,15 @@ export default function Index() {
             onBehancePress={onBehancePressHandler}
           />
 
-          <Pressable
-              style={({ pressed }) => [
-                  styles.customButton,
-                  pressed && styles.buttonPressed,
-              ]}
-              onPress={onContactoHandler}
-          >
-              <Text style={styles.customButtonText}>Contacto</Text>
-          </Pressable>
+          <BotonIcon texto="Ver mi CV " icono="arrow-up-right-from-square" tamaño={18} onPress={onContactoHandler}/>
+
           <Text style={styles.bio}>Soy un Desarrollador Web con experiencia en el desarrollo de aplicaciones y sitios responsivos. Además, cuento con formación en Ciencia de Datos, UX/UI y Testing QA, lo que me permite aportar una visión integral en cada proyecto.</Text>
-
+          
           <View style={styles.linkContainer}>
-            <Link asChild href="/experiencia" style={styles.customButton}>
-              <Pressable
-                style={({ pressed }) => [
-                  styles.linkPressable,
-                  pressed && styles.buttonPressed,
-                ]}
-              >
-              <MaterialCommunityIcons name="card-account-details-outline" size={40} color="white" />
-                <Text style={styles.experiencia}>Experiencia</Text>
-              </Pressable>
-            </Link>
-
-            <Link asChild href="/estudios" style={styles.customButton}>
-              <Pressable
-                style={({ pressed }) => [
-                  styles.linkPressable,
-                  pressed && styles.buttonPressed,
-                ]}
-              >
-                <MaterialCommunityIcons name="school-outline" size={40} color="white" />
-                <Text style={styles.experiencia}>Estudios</Text>
-              </Pressable>
-            </Link>
-          </View>
-          <View style={styles.linkContainer}>
-            <Link asChild href="/proyectos" style={styles.customButton}>
-              <Pressable
-                style={({ pressed }) => [
-                  styles.linkPressable,
-                  pressed && styles.buttonPressed,
-                ]}
-              >
-               <MaterialIcons name="devices" size={40} color="white"/>
-                <Text style={styles.experiencia}>Proyectos</Text>
-              </Pressable>
-            </Link>
-
-            <Link asChild href="/experiencia" style={styles.customButton}>
-              <Pressable
-                style={({ pressed }) => [
-                  styles.linkPressable,
-                  pressed && styles.buttonPressed,
-                ]}
-              >
-                <MaterialCommunityIcons name="head-cog-outline" size={40} color="white" />
-                <Text style={styles.experiencia}>Skills</Text>
-              </Pressable>
-            </Link>
+            <BotonLink icono="card-account-details-outline" tamaño={40} texto="Experiencia" link="/experiencia"/>
+            <BotonLink icono="school-outline" tamaño={40} texto="Estudios" link="/estudios"/>
+            <BotonLink icono="cellphone-link" tamaño={40} texto="Proyectos" link="/proyectos"/>
+            <BotonLink icono="head-cog-outline" tamaño={40} texto="Skills" link="/skills"/>
           </View>
         </View>
       </ScrollView>
@@ -105,7 +57,7 @@ export default function Index() {
   );
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   contenido: {
     flex: 1,
   },
@@ -139,45 +91,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginVertical:20
   },
-  experiencia:{
-    fontWeight: "bold",
-    fontSize: 18,
-    marginTop: 5,
-    color: "white",
-  },
-  customButton: {
-    flexDirection:"column",
-    alignItems:"center",
-    backgroundColor: "#1E2023",
-    borderColor: "white",
-    borderWidth: 1,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 10,
-    width: 130,
-  },
-  customButtonText: {
-      color: "white",
-      fontSize: 18,
-      fontWeight: "bold",
-  },
-  buttonPressed:{
-    backgroundColor: "#1B1C1E",
-    borderColor: "darkblue", 
-  },
   linkContainer:{
     flexDirection:"row",
     alignItems: 'center',
+    justifyContent: "center",
+    flexWrap: "wrap",
     marginBottom: 20,
     gap: 20
   },
-  linkPressable: {
-    flexDirection: "column",
-    alignItems: 'center',
-  },
 });
-
-const onContactoHandler = () => {
-  console.log("mailto:gez.carlos.98@gmail.com")
-  Linking.openURL("mailto:gez.carlos.98@gmail.com");
-};

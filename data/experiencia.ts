@@ -9,8 +9,8 @@ interface Experiencia {
 
 export const experiencias: Experiencia[] = [
 {
-logo: "https://media.licdn.com/dms/image/v2/C560BAQFoMbh8Jawjhg/company-logo_100_100/company-logo_100_100/0/1631338342207?e=1749081600&v=beta&t=6fgq4Zi_lslt6EwSEinoOUmyLfOT2qaNu9C_ny94y9c",
-posicion: "Desarollador Full Stack",
+logo: "https://thumbs.dreamstime.com/b/web-developer-icon-isolated-white-background-vector-illustration-252891893.jpg",
+posicion: "Web Developer",
 empresa: "Freelancer",
 fecha: "10/06/2023 - Actualidad",
 locacion: "Cordoba, Argentina",
