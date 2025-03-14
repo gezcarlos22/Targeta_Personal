@@ -17,7 +17,7 @@ export default function Skills() {
                   <BotonIcon icono="chevron-down" tamaño={18} texto="Hard Skills"/>
                   <View style={styles.skillsContainer}>
                     <TarjetaHardSkill texto="HTML" icono="html5" tamaño={40}/>
-                    <TarjetaHardSkill texto="HTML" icono="css3-alt" tamaño={40}/>
+                    <TarjetaHardSkill texto="CSS" icono="css3-alt" tamaño={40}/>
                     <TarjetaHardSkill texto="Angular" icono="angular" tamaño={40}/>
                     <TarjetaHardSkill texto="JavaScript" icono="js" tamaño={40}/>
                     <TarjetaHardSkill texto="React" icono="react" tamaño={40}/>
