@@ -1,50 +1,21 @@
-# Welcome to your Expo app 👋
+# Tarjeta Personal - App
+Permítanme presentarles mi tarjeta personal digital, diseñada para ofrecer una visión completa y dinámica de mi perfil profesional. En esta aplicación, he compilado cuidadosamente un resumen detallado de mi experiencia laboral, destacando roles clave y logros significativos a lo largo de mi carrera. También podrán explorar mis estudios y formación académica, proporcionando un contexto sólido a mis competencias. Para facilitar la conexión en el ámbito digital, he incluido enlaces directos a mis diversas redes sociales profesionales. Además, podrán navegar a través de un portafolio visual de mis proyectos más relevantes, ofreciendo una muestra tangible de mis capacidades y expertise. Finalmente, he detallado un listado claro y conciso de mis habilidades clave, tanto técnicas como blandas, permitiendo una rápida comprensión de mi conjunto de talentos. 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Cómo correr la App:
+1. Instalar Dependencies
 
 ```bash
-npm run reset-project
+  npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Arrancar la app
 
-## Learn more
+```bash
+  npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Seleccionar el entorno:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- `i` iOS
+- `a` Android
+- `w` Web
